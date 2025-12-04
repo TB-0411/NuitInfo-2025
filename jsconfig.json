@@ -5,6 +5,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "three/webgpu": ["node_modules/three/build/three.webgpu.js"],
+      "three/tsl": ["node_modules/three/build/three.tsl.js"]
+    }
   }
 }
