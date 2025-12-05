@@ -233,6 +233,8 @@ function updatePlayPauseButton(isPaused) {
     }
 }
 
+const RESOURCE_ROOT = "./resources/sounds"
+
 document.body.insertAdjacentHTML('beforeend', `
     <div id="audio-ui" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 50px; 
         background: #282828; 
