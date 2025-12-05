@@ -131,9 +131,6 @@ function onPointerDown(event) {
     if (event.button === 2) { // Right mouse button
         event.preventDefault(); // Prevent context menu
         isPanning = true;
-
-        // This line is needed to activate OrbitControls' pan state
-        controls.handleMouseDownPan(event);
     }
 }
 
@@ -288,18 +285,14 @@ let animationRunning = false;
 let audioIsLoaded = false;
 function startPlayback() {
     audio.play();
-    renderer.setAnimationLoop(animate);
     animationRunning = true;
+    renderer.setAnimationLoop(animate);
     updatePlayPauseButton(false);
     console.log("Audio Playback Resumed/Started");
 }
 
 function pausePlayback() {
-    if (audio.isPlaying) {
-        audio.offset = Math.max(0, audio.context.currentTime - audio.startTime + audio.offset);
-    }
-
-    audio.pause(); // Now safe to pause
+    audio.pause();
     renderer.setAnimationLoop(null);
     animationRunning = false;
     updatePlayPauseButton(true);
@@ -311,9 +304,6 @@ function loadNewAudio(source, displayName) {
 
     audioIsLoaded = false;
     playPauseButton.innerHTML = 'Loading...';
-
-    audio.offset = 0;
-    audio.startTime = 0;
 
     audioLoader.load(source, function(buffer) {
             audio.setBuffer(buffer);
@@ -347,8 +337,11 @@ audioLoader.load(AUDIO_SOURCE, function (buffer) {
         if (animationRunning) {
             pausePlayback();
         } else {
-            document.getElementById('Warning').remove();
+
             if (audioContext.state === 'suspended') {
+                if (document.getElementById('Warning')) {
+                    document.getElementById('Warning').remove();
+                }
                 audioContext.resume().then(startPlayback);
             } else {
                 startPlayback();
