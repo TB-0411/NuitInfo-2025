@@ -259,8 +259,10 @@ document.body.insertAdjacentHTML('beforeend', `
         <div style="width: 40%; display: flex; align-items: center; justify-content: center;">
              <label for="song-selector" style="margin-right: 10px; font-size: 12px; color: #aaa;">Song:</label>
              <select id="song-selector" style="padding: 3px; border-radius: 2px; background: #444; color: white; border: none;">
-                <option value="resources/sounds/dignity.ogg">Dignity (Synth)</option>
-                <option value="resources/sounds/horizon.mp3">Horizon (Metal)</option>
+                <option value="resources/sounds/dignity.ogg">Dignity - Alzando (Synth)</option>
+                <option value="resources/sounds/horizon.mp3">Bring_Me_The_Horizon feat. BABYMETAL- Kingslayer (Metal)</option>
+                <option value="resources/sounds/retro.mp3">Retro - someone (8bits)</option>
+                <option value="resources/sounds/dontyouwalkaway.mp3">Don't you walk away - Astron (Calm Reviving)</option>
             </select>
             
             <input type="file" id="file-input" accept=".mp3, .ogg" style="margin-left: 15px; background: #444; padding: 3px; border-radius: 2px; font-size: 12px; color: white;">
