@@ -1,12 +1,9 @@
 import * as THREE from "three";
 
 const ORIGIN = 0
-export function createCuboid(size_x, size_y, size_z, hex_color=0x000000) {
+export function createCuboid(size_x, size_y, size_z, params={color : 0x404040}) {
     const geometry = new THREE.BoxGeometry(size_x,size_y,size_z);
-    const material = new THREE.MeshPhongMaterial({
-        color: hex_color,
-        shininess: 100
-    });
+    const material = new THREE.MeshStandardMaterial(params);
     const cuboid = {
         origin_pos: null,
         origin_scale: null,
