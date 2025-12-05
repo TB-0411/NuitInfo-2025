@@ -1,0 +1,62 @@
+#progress-bar {
+    /* Base styles to strip default input appearance */
+    width: 100%;
+    height: 5px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+
+    /* CRITICAL: Hides the default slider appearance */
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* Default track color (e.g., grey, like YouTube's unplayed track) */
+    background: #555;
+}
+
+/* Chrome, Safari, Edge, Opera (Track Styling) */
+#progress-bar::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: #555; /* Unplayed track */
+    border: none;
+}
+
+/* Firefox (Track Styling) */
+#progress-bar::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    background: #555;
+    border: none;
+}
+
+/* Chrome, Safari, Edge, Opera (Thumb Styling) */
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -4px; /* Adjust vertical position to sit correctly on the track */
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #FF0000; /* Red thumb for YouTube look */
+    cursor: pointer;
+    border: 0;
+}
+
+/* Firefox (Thumb Styling) */
+#progress-bar::-moz-range-thumb {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #FF0000;
+    cursor: pointer;
+    border: 0;
+}
+
+/* IMPORTANT: This controls the fill/played portion of the track in Firefox */
+/* Without this, only the thumb is visible */
+#progress-bar::-moz-range-progress {
+    background: #FF0000; /* Red played portion */
+    height: 5px;
+}

@@ -1,1 +1,8 @@
-Song : Yooh - Dignity -alzando
+Songs :
+    Yooh - Dignity -alzando
+    Bring_Me_The_Horizon feat. BABYMETAL- Kingslayer
+
+
+Helper :
+    Gemini - for the understanding of three.js and MOST of the audio player interface
+    (I just wanted to do the visual not the functionalities outside)
